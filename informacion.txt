@@ -1,0 +1,33 @@
+Este proyecto presenta una función que transforma una duración (dada como un número de segundos) en texto legible.
+
+La función acepta un entero no negativo. Si es cero, simplemente devuelve "now". De lo contrario, devuelve la duración expresada
+como una combinación de años, días, horas, minutos y segundos.
+
+Es mucho más fácil de entender con un ejemplo:
+
+Para seconds = 62, la función devuelve
+"1 minute and 2 seconds"
+
+Para seconds = 3662, la función devuelve
+"1 hour, 1 minute and 2 seconds"
+
+Para el propósito de este proyecto, un año tiene 365 días y un día tiene 24 horas.
+
+Tener en cuenta que los espacios son importantes.
+
+La expresión resultante está compuesta por elementos como 4 seconds, 1 year, etc. En general, un entero positivo y una de las
+unidades de tiempo válidas, separados por un espacio. La unidad de tiempo se usa en plural si el entero es mayor que 1.
+
+Los componentes están separados por una coma y un espacio (", "). Excepto el último componente, que se separa con " and ", tal como
+se escribiría en inglés.
+
+Las unidades de tiempo más significativas aparecen antes que las menos significativas. Por lo tanto, 1 second and 1 year no es
+correcto, pero 1 year and 1 second sí lo es.
+
+Los distintos componentes tienen diferentes unidades de tiempo. Por lo tanto, no se repiten unidades como en 5 seconds and 1 second.
+
+Un componente no aparecerá si su valor es cero. Por lo tanto, 1 minute and 0 seconds no es válido, y va a ser simplemente 1 minute.
+
+Una unidad de tiempo debe usarse “tanto como sea posible”. Esto significa que la función no devolverá 61 seconds, sino 1 minute
+and 1 second. Formalmente, la duración especificada por un componente no debe ser mayor que cualquier unidad de tiempo válida
+más significativa.
